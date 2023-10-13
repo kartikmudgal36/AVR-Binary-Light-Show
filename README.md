@@ -1,7 +1,5 @@
 # AVR Binary Light Ballet
 
-![Binary Light Ballet](link-to-your-image-or-gif.gif)
-
 ## Overview
 
 The "AVR Binary Light Ballet" code is a meticulously crafted program designed exclusively for AVR microcontrollers. It delivers captivating LED choreography with precision and grace, making it a harmonious blend of art and technology. This README provides essential information to set up, use, and explore the educational and practical potential of the code.
