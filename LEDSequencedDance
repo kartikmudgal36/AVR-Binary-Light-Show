@@ -1,0 +1,26 @@
+#define F_CPU 1000000UL
+#include <avr/io.h>
+#include <util/delay.h>
+void ADC_init ()
+{
+    ADMUX =(1<<REFS0);
+    ADCSRA =(1<<ADEN)|(1<<ADPS0)|(1<<ADPS1);
+}
+uint16_t ADC_read(uint8_t channel)
+{
+    ADCSRA|=(1<<ADSC);
+    while((ADCSRA&(1<<ADIF))==0);
+    uint16_t data =ADC;
+    return data;
+    
+}
+int main()
+{
+    DDRD=0XFF;
+    ADC_init();
+    while(1)
+    {
+        uint16_t ADC_value=ADC_read(0);
+        PORTD = ADC_value;
+    }
+}
